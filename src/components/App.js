@@ -1,19 +1,15 @@
-import React, { useState } from 'react';
-import Input from './Input';
+import React, { useReducer } from 'react';
+import Input from '../container/Input';
 import List from './List';
+import { initialState, reducer } from '../store/reducer';
 
 const App = () => {
-  const [todos, setTodos] = useState([]);
-
-  // Maybe this can be refactored to use a reducer instead
-  const saveTodo = (todo) => {
-    setTodos([...todos, todo]);
-  };
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
     <>
-      <Input onSubmit={saveTodo} />
-      <List todos={todos} />
+      <Input dispatch={dispatch} />
+      <List todos={state} />
     </>
   );
 };
