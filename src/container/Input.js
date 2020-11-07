@@ -4,7 +4,7 @@ import { add } from '../store/actions';
 
 const InputContainer = ({ dispatch }) => {
   const handleUseReducerAdd = (value) => {
-    dispatch(add(value));
+    dispatch(add({ value }));
   };
 
   return <Input onSubmit={handleUseReducerAdd} />;
