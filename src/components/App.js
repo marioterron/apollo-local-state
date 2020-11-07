@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
 import Input from '../container/Input';
-import List from './List';
+import List from '../container/List';
 import { initialState, reducer } from '../store/reducer';
 
 const App = () => {
@@ -9,7 +9,7 @@ const App = () => {
   return (
     <>
       <Input dispatch={dispatch} />
-      <List todos={state} />
+      <List state={state} dispatch={dispatch} />
     </>
   );
 };
