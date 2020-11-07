@@ -1,3 +1,4 @@
 const ADD = 'ADD';
+const UPDATE = 'UPDATE';
 
-export { ADD };
+export { ADD, UPDATE };

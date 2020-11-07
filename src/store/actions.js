@@ -1,8 +1,13 @@
 import * as ACTION_TYPES from './actionTypes';
 
-const add = (value) => ({
+const add = (payload) => ({
   type: ACTION_TYPES.ADD,
-  payload: value,
+  payload: { id: new Date().getTime().toString(), value: payload.value },
 });
 
-export { add };
+const update = (payload) => ({
+  type: ACTION_TYPES.UPDATE,
+  payload,
+});
+
+export { add, update };
