@@ -34,8 +34,6 @@ const ListItem = ({ id, children, onDeleteItem, onUpdateItem }) => {
     onDeleteItem(value, id);
   };
 
-  if (!children) return null;
-
   return (
     <>
       {!isEditing ? (
