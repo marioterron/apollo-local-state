@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Input from '../components/input';
+import Input from '../components/Input';
 import { add } from '../store/actions';
 
 const InputContainer = ({ dispatch }) => {

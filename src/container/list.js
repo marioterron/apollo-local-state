@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { remove, update } from '../store/actions';
-import List from '../components/list';
+import List from '../components/List';
 
 const ListContainer = ({ state, dispatch }) => {
   const handleUseReducerRemove = (value, id) => {
