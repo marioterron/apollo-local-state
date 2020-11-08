@@ -10,4 +10,9 @@ const update = (payload) => ({
   payload,
 });
 
-export { add, update };
+const remove = (payload) => ({
+  type: ACTION_TYPES.REMOVE,
+  payload,
+});
+
+export { add, update, remove };
