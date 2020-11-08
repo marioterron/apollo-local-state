@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react';
 import ReactDOM from 'react-dom';
-import Input from './container/Input';
-import List from './container/List';
+import Input from './container/input';
+import List from './container/list';
 import { initialState, reducer } from './store/reducer';
 import './index.css';
 
