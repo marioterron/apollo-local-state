@@ -3,7 +3,7 @@ import Input from '../container/Input';
 import List from '../container/List';
 import { initialState, reducer } from '../store/reducer';
 
-const App = () => {
+const Home = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
@@ -14,4 +14,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Home;
