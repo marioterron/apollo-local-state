@@ -5,16 +5,25 @@ const ListItem = ({ id, children, onDeleteItem, onUpdateItem }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [value, setValue] = useState('');
 
-  const handleDoubleClick = () => {
+  const handleItemDelete = () => {
+    onDeleteItem(value, id);
+  };
+
+  const handleItemDoubleClick = () => {
     setIsEditing(true);
     setValue(children);
   };
 
-  const handleChange = (event) => {
+  const handleInputBlur = () => {
+    setValue('');
+    setIsEditing(false);
+  };
+
+  const handleInputChange = (event) => {
     setValue(event.target.value);
   };
 
-  const handleKeyPress = (event) => {
+  const handleInputKeyPress = (event) => {
     const isEnter = event.charCode === 13;
 
     if (isEnter) {
@@ -24,21 +33,12 @@ const ListItem = ({ id, children, onDeleteItem, onUpdateItem }) => {
     }
   };
 
-  const handleBlur = () => {
-    setValue('');
-    setIsEditing(false);
-  };
-
-  const handleDelete = () => {
-    onDeleteItem(value, id);
-  };
-
   return (
     <>
       {!isEditing ? (
-        <li onDoubleClick={handleDoubleClick}>
+        <li onDoubleClick={handleItemDoubleClick}>
           {children}
-          <span role="img" aria-label="Delete" onClick={handleDelete}>
+          <span role="img" aria-label="Delete" onClick={handleItemDelete}>
             ❌
           </span>
         </li>
@@ -47,9 +47,9 @@ const ListItem = ({ id, children, onDeleteItem, onUpdateItem }) => {
           type="text"
           placeholder="Type a new name for the todo..."
           value={value}
-          onChange={handleChange}
-          onKeyPress={handleKeyPress}
-          onBlur={handleBlur}
+          onChange={handleInputChange}
+          onKeyPress={handleInputKeyPress}
+          onBlur={handleInputBlur}
         />
       )}
     </>
