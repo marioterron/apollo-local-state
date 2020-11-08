@@ -30,7 +30,6 @@ const ListItem = ({ id, children, onDeleteItem, onUpdateItem }) => {
   };
 
   const handleDelete = () => {
-    console.log('deleting item', { id, value });
     onDeleteItem(value, id);
   };
 
