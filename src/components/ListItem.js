@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const ListItem = ({ id, children, onUpdateItem }) => {
+const ListItem = ({ id, children, onDeleteItem, onUpdateItem }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [value, setValue] = useState('');
 
@@ -28,10 +28,22 @@ const ListItem = ({ id, children, onUpdateItem }) => {
     setIsEditing(false);
   };
 
+  const handleDelete = () => {
+    console.log('deleting item', { id, value });
+    onDeleteItem(value, id);
+  };
+
+  if (!children) return null;
+
   return (
     <>
       {!isEditing ? (
-        <li onDoubleClick={handleDoubleClick}>{children}</li>
+        <li onDoubleClick={handleDoubleClick}>
+          {children}
+          <span role="img" aria-label="Delete" onClick={handleDelete}>
+            ❌
+          </span>
+        </li>
       ) : (
         <input
           type="text"

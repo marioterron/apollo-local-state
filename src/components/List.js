@@ -1,12 +1,12 @@
 import React from 'react';
 import ListItem from './ListItem';
 
-const List = ({ todos, onUpdateItem }) => {
+const List = ({ todos, onDeleteItem, onUpdateItem }) => {
   return (
     <ul>
       {todos &&
         todos.map(({ id, value }) => (
-          <ListItem key={id} id={id} onUpdateItem={onUpdateItem}>
+          <ListItem key={id} id={id} onDeleteItem={onDeleteItem} onUpdateItem={onUpdateItem}>
             {value}
           </ListItem>
         ))}
