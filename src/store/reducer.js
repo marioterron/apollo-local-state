@@ -19,7 +19,7 @@ const reducer = (state, action) => {
         }),
       ];
     case ACTION_TYPES.REMOVE:
-      return [...state.map((item) => item.id !== action.payload.id && item)];
+      return [...state.filter((item) => item.id !== action.payload.id)];
     default:
       throw new Error();
   }

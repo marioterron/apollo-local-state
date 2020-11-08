@@ -1,5 +1,6 @@
 import React from 'react';
-import Input from '../components/Input';
+import PropTypes from 'prop-types';
+import Input from '../components/input';
 import { add } from '../store/actions';
 
 const InputContainer = ({ dispatch }) => {
@@ -8,6 +9,10 @@ const InputContainer = ({ dispatch }) => {
   };
 
   return <Input onSubmit={handleUseReducerAdd} />;
+};
+
+InputContainer.propTypes = {
+  dispatch: PropTypes.func.isRequired,
 };
 
 export default InputContainer;
