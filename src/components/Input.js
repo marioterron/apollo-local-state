@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 const Input = ({ onSubmit }) => {
   const [value, setValue] = useState('');
@@ -25,6 +26,10 @@ const Input = ({ onSubmit }) => {
       onKeyPress={handleKeyPress}
     />
   );
+};
+
+Input.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
 };
 
 export default Input;
