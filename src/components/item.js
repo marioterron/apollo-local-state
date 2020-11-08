@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-const ListItem = ({ id, children, onDeleteItem, onUpdateItem }) => {
+const Item = ({ id, children, onDeleteItem, onUpdateItem }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [value, setValue] = useState('');
 
@@ -56,11 +56,11 @@ const ListItem = ({ id, children, onDeleteItem, onUpdateItem }) => {
   );
 };
 
-ListItem.propTypes = {
+Item.propTypes = {
   id: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired,
   onDeleteItem: PropTypes.func.isRequired,
   onUpdateItem: PropTypes.func.isRequired,
 };
 
-export default ListItem;
+export default Item;

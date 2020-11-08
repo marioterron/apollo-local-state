@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ListItem from './ListItem';
+import Item from './item';
 
 const List = ({ todos, onDeleteItem, onUpdateItem }) => (
   <ul>
     {todos &&
       todos.map(({ id, value }) => (
-        <ListItem key={id} id={id} onDeleteItem={onDeleteItem} onUpdateItem={onUpdateItem}>
+        <Item key={id} id={id} onDeleteItem={onDeleteItem} onUpdateItem={onUpdateItem}>
           {value}
-        </ListItem>
+        </Item>
       ))}
   </ul>
 );
