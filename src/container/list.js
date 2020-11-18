@@ -1,18 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { remove, update } from '../store/actions';
+import { useQuery } from '@apollo/client';
 import List from '../components/list';
+import { deleteTodo, editTodo } from '../operations/mutations';
+import GET_ALL_TODOS from '../operations/queries/getAllTodos';
 
 const ListContainer = ({ state, dispatch }) => {
-  const handleUseReducerRemove = (value, id) => {
-    dispatch(remove({ id, value }));
-  };
+  const { loading, data, error } = useQuery(GET_ALL_TODOS);
 
-  const handleUseReducerUpdate = (value, id) => {
-    dispatch(update({ id, value }));
-  };
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>An error occurred</div>;
+  if (!data) return <div>No data!</div>;
 
-  return <List todos={state} onDeleteItem={handleUseReducerRemove} onUpdateItem={handleUseReducerUpdate} />;
+  return <List todos={data.todos} onDeleteItem={deleteTodo} onUpdateItem={editTodo} />;
 };
 
 ListContainer.propTypes = {

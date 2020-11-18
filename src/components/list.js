@@ -5,9 +5,9 @@ import Item from './item';
 const List = ({ todos, onDeleteItem, onUpdateItem }) => (
   <ul>
     {todos &&
-      todos.map(({ id, value }) => (
+      todos.map(({ id, text }) => (
         <Item key={id} id={id} onDeleteItem={onDeleteItem} onUpdateItem={onUpdateItem}>
-          {value}
+          {text}
         </Item>
       ))}
   </ul>

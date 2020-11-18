@@ -6,7 +6,7 @@ const Item = ({ id, children, onDeleteItem, onUpdateItem }) => {
   const [value, setValue] = useState('');
 
   const handleItemDelete = () => {
-    onDeleteItem(value, id);
+    onDeleteItem(id);
   };
 
   const handleItemDoubleClick = () => {
@@ -27,7 +27,7 @@ const Item = ({ id, children, onDeleteItem, onUpdateItem }) => {
     const isEnter = event.charCode === 13;
 
     if (isEnter) {
-      onUpdateItem(value, id);
+      onUpdateItem({ id, text: value });
       setValue('');
       setIsEditing(false);
     }
