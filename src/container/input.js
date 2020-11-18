@@ -1,18 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Input from '../components/input';
-import { add } from '../store/actions';
+import { addTodo } from '../operations/mutations';
 
-const InputContainer = ({ dispatch }) => {
-  const handleUseReducerAdd = (value) => {
-    dispatch(add({ value }));
-  };
-
-  return <Input onSubmit={handleUseReducerAdd} />;
-};
-
-InputContainer.propTypes = {
-  dispatch: PropTypes.func.isRequired,
-};
+const InputContainer = () => <Input onSubmit={addTodo} />;
 
 export default InputContainer;
