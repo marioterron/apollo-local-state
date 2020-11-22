@@ -27,6 +27,7 @@
     ]
   },
   "prettier": {
+    "endOfLine": "auto",
     "singleQuote": true,
     "printWidth": 120
   },
@@ -46,6 +47,7 @@
     "autoprefixer": "^10.0.2",
     "eslint-config-prettier": "^6.12.0",
     "eslint-plugin-prettier": "^3.1.4",
+    "postcss": "^8.1.9",
     "postcss-cli": "^8.3.0",
     "prettier": "^2.1.2",
     "tailwindcss": "^2.0.1"
