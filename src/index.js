@@ -4,7 +4,7 @@ import { ApolloClient, ApolloProvider } from '@apollo/client';
 import cache from './cache';
 import Input from './container/input';
 import List from './container/list';
-import './index.css';
+import './assets/index.css';
 
 const client = new ApolloClient({ cache, connectToDevTools: true });
 
